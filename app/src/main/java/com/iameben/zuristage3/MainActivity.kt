@@ -3,6 +3,7 @@ package com.iameben.zuristage3
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.text.util.Linkify
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -34,12 +35,14 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        // disables the button if editText is empty
         binding?.okBtn?.isEnabled = false
         binding.inputTiE.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
+            // enables the button after a text is inputted
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                binding?.okBtn?.isEnabled = p0.toString().trim{ it <= ' '}.isNotEmpty()
             }
@@ -49,6 +52,9 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+        binding.hereTv.setText("https://internship.zuri.team")
+        Linkify.addLinks(binding.hereTv, Linkify.WEB_URLS)
+
 
     }
 }
