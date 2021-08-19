@@ -1,5 +1,7 @@
 package com.iameben.zuristage3
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,8 +14,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.core.widget.addTextChangedListener
 import com.iameben.zuristage3.databinding.ActivityMainBinding
+import java.net.URI
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,9 +56,15 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-        binding.hereTv.setText("https://internship.zuri.team")
-        Linkify.addLinks(binding.hereTv, Linkify.WEB_URLS)
+//        binding.hereTv.setText("https://internship.zuri.team")
+//        Linkify.addLinks(binding.hereTv, Linkify.WEB_URLS)
 
 
+    }
+
+    fun zuri(view: View) {
+        val uri = Uri.parse("https://internship.zuri.team")
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        startActivity(intent)
     }
 }

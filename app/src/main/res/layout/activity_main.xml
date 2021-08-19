@@ -57,6 +57,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
             android:orientation="horizontal"
             android:layout_below="@id/display_TV">
 
@@ -68,9 +69,10 @@
             <TextView
                 android:id="@+id/here_Tv"
                 android:layout_width="wrap_content"
-                android:textColor="@color/text_color"
+                android:textColor="@color/purple_700"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
+                android:onClick="zuri"
                 android:text="@string/text2_txt"/>
             <TextView
                 android:layout_width="wrap_content"
