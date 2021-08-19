@@ -56,8 +56,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-//        binding.hereTv.setText("https://internship.zuri.team")
-//        Linkify.addLinks(binding.hereTv, Linkify.WEB_URLS)
 
 
     }
